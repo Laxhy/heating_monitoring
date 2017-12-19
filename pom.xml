@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.laxhy.heating</groupId>
+    <artifactId>heating_monitoring</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
+
+    <!-- Additional lines to be added here... -->
+
+    <modules>
+        <module>app</module>
+        <module>modules</module>
+    </modules>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring.version>4.3.8.RELEASE</spring.version>
+        <spring-boot-dependencies.version>1.5.3.RELEASE</spring-boot-dependencies.version>
+        <slf4j-api.version>1.7.22</slf4j-api.version>
+        <lombok.version>1.16.18</lombok.version>
+        <hibernate.version>5.2.1.Final</hibernate.version>
+        <h2.version>1.4.196</h2.version>
+        <flyway.version>5.0.2</flyway.version>
+
+        <maven.plugin.version>3.3</maven.plugin.version>
+        <maven.resources.plugin.version>2.7</maven.resources.plugin.version>
+        
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!--Spring Data JPA-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+            </dependency>
+            <!--H2 Database-->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+            <!--Connection Pool-->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <!--Flyway-->
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+</project>
