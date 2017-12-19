@@ -39,6 +39,10 @@ public class MeasureHeat {
     private Double temperatureFloor;
     @NonNull
     private Double temperatureSetFloor;
+    @NonNull
+    private Boolean heatingOn;
+    @NonNull
+    private Integer manualChange;
 
 
 }

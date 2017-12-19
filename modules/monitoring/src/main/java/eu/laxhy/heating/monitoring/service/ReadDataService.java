@@ -45,8 +45,13 @@ public class ReadDataService implements IReadDataService {
             Double floorSetTemperature = roomDataService.getSetTemperature(resultFloor);
             Double roomTemperature = roomDataService.getActualTemperature(resultRoom);
             Double roomSetTemperature = roomDataService.getSetTemperature(resultRoom);
-            log.info(room.toString() + " air temperature: " + roomTemperature + " set: " + roomSetTemperature + " floor: " + floorTemperature + " set: " + floorSetTemperature);
-            measureHeatRepository.save(new MeasureHeat(measureDate, room.toString(), roomTemperature, roomSetTemperature, floorTemperature, floorSetTemperature));
+            boolean isHeatingOn = roomDataService.isHeatingOn(resultFloor);
+            Integer manualChange = roomDataService.manualChange(resultRoom);
+            log.info(room.toString() + " air temperature: " + roomTemperature + " set: " + roomSetTemperature +
+                                       " floor: " + floorTemperature + " set: " + floorSetTemperature +
+                                        " is heating on: " + isHeatingOn + " manual change: " + manualChange);
+
+            measureHeatRepository.save(new MeasureHeat(measureDate, room.toString(), roomTemperature, roomSetTemperature, floorTemperature, floorSetTemperature, isHeatingOn, manualChange));
         });
 
         Tariff tariffState = heatingSystemService.getHDOTariff();

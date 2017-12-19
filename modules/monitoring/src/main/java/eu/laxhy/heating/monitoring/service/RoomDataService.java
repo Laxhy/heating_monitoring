@@ -19,4 +19,14 @@ public class RoomDataService implements IRoomDataService {
     public Double getActualTemperature(String result) {
         return Double.valueOf(result.substring(15,19));
     }
+
+    @Override
+    public Boolean isHeatingOn(String result) {
+        return Boolean.valueOf('1' == result.charAt(36));
+    }
+
+    @Override
+    public Integer manualChange(String result) {
+        return Integer.valueOf(result.substring(27,30));
+    }
 }

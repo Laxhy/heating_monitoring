@@ -10,4 +10,8 @@ public interface IRoomDataService {
 
     Double getActualTemperature(String result);
 
+    Boolean isHeatingOn(String result);
+
+    Integer manualChange(String result);
+
 }
