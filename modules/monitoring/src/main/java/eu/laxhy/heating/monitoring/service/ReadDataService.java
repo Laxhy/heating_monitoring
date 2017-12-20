@@ -2,8 +2,11 @@ package eu.laxhy.heating.monitoring.service;
 
 import eu.laxhy.heating.monitoring.domain.MeasureHeat;
 import eu.laxhy.heating.monitoring.domain.TariffStatus;
+import eu.laxhy.heating.monitoring.domain.Weather;
+import eu.laxhy.heating.monitoring.dto.WeatherDto;
 import eu.laxhy.heating.monitoring.repository.MeasureHeatRepository;
 import eu.laxhy.heating.monitoring.repository.TariffStatusRepository;
+import eu.laxhy.heating.monitoring.repository.WeatherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,10 +28,16 @@ public class ReadDataService implements IReadDataService {
     private TariffStatusRepository tariffStatusRepository;
 
     @Autowired
+    private WeatherRepository weatherRepository;
+
+    @Autowired
     private IRoomDataService roomDataService;
 
     @Autowired
     private IHeatingSystemService heatingSystemService;
+
+    @Autowired
+    private IWeatherService weatherService;
 
     @Override
     public void readAndStoreAllRoomsDataTemperature() {
@@ -57,6 +66,9 @@ public class ReadDataService implements IReadDataService {
         Tariff tariffState = heatingSystemService.getHDOTariff();
         log.info("Tariff: " + tariffState);
         tariffStatusRepository.save(new TariffStatus(measureDate, tariffState));
+
+        WeatherDto weatherDto = weatherService.getWeatherInfo();
+        weatherRepository.save(new Weather(measureDate, weatherDto.getMain().getTemp(), weatherDto.getMain().getPressure(), weatherDto.getMain().getHumidity(), weatherDto.getWind().getSpeed()));
 
     }
 
