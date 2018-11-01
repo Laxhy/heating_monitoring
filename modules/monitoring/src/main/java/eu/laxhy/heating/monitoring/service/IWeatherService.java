@@ -7,6 +7,6 @@ import eu.laxhy.heating.monitoring.dto.WeatherDto;
  */
 public interface IWeatherService {
 
-    WeatherDto getWeatherInfo();
+  WeatherDto getWeatherInfo();
 
 }

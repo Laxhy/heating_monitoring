@@ -13,12 +13,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class Application {
 
+  /**
+   * Entry point of the application
+   */
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 
-    /**
-     * Entry point of the application
-     * @param args
-     */
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
 }
+
+

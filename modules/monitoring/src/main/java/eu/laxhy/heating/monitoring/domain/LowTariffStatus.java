@@ -2,6 +2,7 @@ package eu.laxhy.heating.monitoring.domain;
 
 import eu.laxhy.heating.monitoring.influxdb.SinglePoint;
 import eu.laxhy.heating.monitoring.influxdb.Value;
+import eu.laxhy.heating.monitoring.service.Tariff;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -18,23 +19,10 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @ToString
 @SinglePoint
-public class Weather {
+public class LowTariffStatus {
 
   @NonNull
   @Value
-  private Double temperature;
-
-  @NonNull
-  @Value
-  private Integer pressure;
-
-  @NonNull
-  @Value
-  private Integer humidity;
-
-  @NonNull
-  @Value
-  private Integer windSpeed;
-
+  private Boolean low;
 
 }

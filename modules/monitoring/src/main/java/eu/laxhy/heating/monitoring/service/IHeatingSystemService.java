@@ -5,10 +5,10 @@ package eu.laxhy.heating.monitoring.service;
  */
 public interface IHeatingSystemService {
 
-    String getHeatingInfo(int roomOrder);
+  String getHeatingInfo(int roomOrder);
 
-    void login();
+  void login();
 
-    Tariff getHDOTariff();
+  Tariff getHDOTariff();
 
 }

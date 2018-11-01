@@ -13,12 +13,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class RoomsReadDataScheduler {
 
-    @Autowired
-    private IReadDataService dataService;
+  @Autowired
+  private IReadDataService dataService;
 
-    @Scheduled(cron = "0 */5 * * * *")
-    public void readAndStoreRoomsData() {
-        dataService.readAndStoreAllRoomsDataTemperature();
-    }
+  @Scheduled(cron = "0/10 * * * * *")
+  public void readAndStoreRoomsData() {
+    dataService.readAndStoreAllRoomsDataTemperature();
+  }
 
 }

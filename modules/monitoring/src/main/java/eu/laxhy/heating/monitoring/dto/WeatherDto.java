@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Map;
-
 /**
  * Created by Libor Laichmann.
  */
@@ -13,6 +11,7 @@ import java.util.Map;
 @Setter
 @ToString
 public class WeatherDto {
-    private Main main;
-    private Wind wind;
+
+  private Main main;
+  private Wind wind;
 }

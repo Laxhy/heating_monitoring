@@ -5,6 +5,6 @@ package eu.laxhy.heating.monitoring.service;
  */
 public interface IReadDataService {
 
-    void readAndStoreAllRoomsDataTemperature();
+  void readAndStoreAllRoomsDataTemperature();
 
 }

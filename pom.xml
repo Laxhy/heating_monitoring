@@ -31,6 +31,7 @@
         <hibernate.version>5.2.1.Final</hibernate.version>
         <h2.version>1.4.196</h2.version>
         <flyway.version>5.0.2</flyway.version>
+        <influxdb-java.version>2.10</influxdb-java.version>
 
         <maven.plugin.version>3.3</maven.plugin.version>
         <maven.resources.plugin.version>2.7</maven.resources.plugin.version>
@@ -46,29 +47,11 @@
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <!--Spring Data JPA-->
+            <!-- influxdb java client -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-data-jpa</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-            </dependency>
-            <!--H2 Database-->
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>${h2.version}</version>
-            </dependency>
-            <!--Connection Pool-->
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-c3p0</artifactId>
-                <version>${hibernate.version}</version>
-            </dependency>
-            <!--Flyway-->
-            <dependency>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-core</artifactId>
-                <version>${flyway.version}</version>
+                <groupId>org.influxdb</groupId>
+                <artifactId>influxdb-java</artifactId>
+                <version>${influxdb-java.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

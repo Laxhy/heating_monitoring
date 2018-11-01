@@ -11,5 +11,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Wind {
-    private Integer speed;
+
+  private Integer speed;
 }

@@ -12,9 +12,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Main {
-    private Double temp;
-    private Integer pressure;
-    private Integer humidity;
-    private Integer temp_min;
-    private Integer temp_max;
+
+  private Double temp;
+  private Integer pressure;
+  private Integer humidity;
+  private Integer temp_min;
+  private Integer temp_max;
 }

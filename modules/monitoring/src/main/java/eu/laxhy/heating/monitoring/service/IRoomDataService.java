@@ -6,12 +6,12 @@ package eu.laxhy.heating.monitoring.service;
 public interface IRoomDataService {
 
 
-    Double getSetTemperature(String result);
+  Double getSetTemperature(String result);
 
-    Double getActualTemperature(String result);
+  Double getActualTemperature(String result);
 
-    Boolean isHeatingOn(String result);
+  Boolean isHeatingOn(String result);
 
-    Integer manualChange(String result);
+  Integer manualChange(String result);
 
 }

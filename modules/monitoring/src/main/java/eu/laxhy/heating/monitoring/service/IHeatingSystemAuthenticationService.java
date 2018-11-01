@@ -5,8 +5,8 @@ package eu.laxhy.heating.monitoring.service;
  */
 public interface IHeatingSystemAuthenticationService {
 
-    String getLogin();
+  String getLogin();
 
-    String getPassword();
+  String getPassword();
 
 }
